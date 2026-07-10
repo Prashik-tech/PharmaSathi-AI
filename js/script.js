@@ -1,1 +1,1 @@
-console.log("Welcome to PharmaSathi AI");
+console.log("PharmaSathi AI Loaded Successfully");
