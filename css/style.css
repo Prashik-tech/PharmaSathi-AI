@@ -1,25 +1,29 @@
 body{
     margin:0;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#eef7ff;
 }
+
+/* Navigation */
 
 .navbar{
     background:#0066cc;
     color:white;
     padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
 }
 
 .logo{
     font-size:22px;
     font-weight:bold;
-    text-align:center;
 }
 
 .menu{
-    margin-top:10px;
     display:flex;
-    justify-content:space-around;
+    gap:20px;
 }
 
 .menu a{
@@ -28,43 +32,50 @@ body{
     font-weight:bold;
 }
 
+/* Main */
+
 .container{
     width:90%;
-    max-width:500px;
+    max-width:700px;
     margin:auto;
-    text-align:center;
     padding:20px;
 }
 
 .logo-title{
-    font-size:38px;
+    text-align:center;
     color:#0066cc;
+    font-size:36px;
     margin-bottom:5px;
 }
 
 .tagline{
+    text-align:center;
     color:#666;
-    font-size:18px;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
-.subtitle{
-    color:#555;
-    margin-bottom:20px;
+h2{
+    color:#0066cc;
 }
+
+/* Search Box */
 
 .search-box{
     width:100%;
     padding:12px;
-    border-radius:10px;
+    margin-top:10px;
     border:1px solid #ccc;
+    border-radius:10px;
     font-size:16px;
+    box-sizing:border-box;
 }
+
+/* Buttons */
 
 .search-btn{
     width:100%;
-    padding:12px;
     margin-top:10px;
+    padding:12px;
     background:#0066cc;
     color:white;
     border:none;
@@ -73,44 +84,73 @@ body{
     cursor:pointer;
 }
 
+.search-btn:hover{
+    background:#004d99;
+}
+
+/* Result Box */
+
 .result-box{
     margin-top:15px;
     background:white;
     padding:15px;
     border-radius:10px;
-    text-align:left;
     box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
+
+/* Cards */
 
 .cards{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:15px;
-    margin-top:25px;
+    margin-top:20px;
 }
 
 .card{
     background:white;
-    padding:20px;
     border-radius:15px;
+    padding:20px;
+    text-align:center;
     box-shadow:0 4px 10px rgba(0,0,0,.1);
-    cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .card:hover{
-    transform:scale(1.03);
+    transform:translateY(-5px);
 }
+
+/* Footer */
 
 .footer{
     margin-top:40px;
-    padding:20px;
-    text-align:center;
     background:#0066cc;
     color:white;
-    border-radius:10px;
+    text-align:center;
+    padding:20px;
 }
 
 .footer p{
     margin:5px;
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+.menu{
+    width:100%;
+    justify-content:space-around;
+    margin-top:10px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.logo{
+    width:100%;
+    text-align:center;
+}
+
 }
