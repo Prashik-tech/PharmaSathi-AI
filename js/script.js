@@ -1,3 +1,7 @@
+// ----------------------------
+// Medicine Search Database
+// ----------------------------
+
 const medicines = {
   paracetamol: {
     name: "Paracetamol",
@@ -24,13 +28,13 @@ const medicines = {
   }
 };
 
+// ----------------------------
+// Medicine Search
+// ----------------------------
+
 document.getElementById("searchBtn").addEventListener("click", function () {
 
-  const input = document
-    .getElementById("medicineInput")
-    .value
-    .toLowerCase()
-    .trim();
+  const input = document.getElementById("medicineInput").value.toLowerCase().trim();
 
   const result = document.getElementById("result");
 
@@ -49,7 +53,48 @@ document.getElementById("searchBtn").addEventListener("click", function () {
   } else {
 
     result.innerHTML =
-      "<b>Medicine not found.</b><br>Please try Paracetamol, Cetirizine or Ibuprofen.";
+      "<b>Medicine not found.</b>";
+
+  }
+
+});
+
+// ----------------------------
+// Drug Interaction Checker
+// ----------------------------
+
+document.getElementById("interactionBtn").addEventListener("click", function () {
+
+  const drug1 = document.getElementById("drug1").value.toLowerCase().trim();
+
+  const drug2 = document.getElementById("drug2").value.toLowerCase().trim();
+
+  const output = document.getElementById("interactionResult");
+
+  if (
+      (drug1 === "warfarin" && drug2 === "aspirin") ||
+      (drug1 === "aspirin" && drug2 === "warfarin")
+  ) {
+
+      output.innerHTML =
+      "⚠️ <b>Warning!</b><br>Warfarin + Aspirin may increase the risk of bleeding.<br>Please consult a doctor.";
+
+  }
+
+  else if (
+      (drug1 === "paracetamol" && drug2 === "ibuprofen") ||
+      (drug1 === "ibuprofen" && drug2 === "paracetamol")
+  ) {
+
+      output.innerHTML =
+      "✅ No major interaction found.<br>Use only as advised by your doctor.";
+
+  }
+
+  else {
+
+      output.innerHTML =
+      "ℹ️ Interaction information is not available for this combination.";
 
   }
 
