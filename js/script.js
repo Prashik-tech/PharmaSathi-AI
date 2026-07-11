@@ -1,144 +1,48 @@
-// ==========================
-// PharmaSathi AI v1.0
-// ==========================
+// ===============================
+// PharmaSathi AI V2.0
+// Dashboard Navigation
+// ===============================
 
-// Medicine Database
-const medicines = {
-    paracetamol: {
-        name: "Paracetamol",
-        uses: "Fever and Pain",
-        dose: "500 mg after food (or as prescribed)",
-        sideEffects: "Nausea, Skin rash",
-        storage: "Store below 25°C"
-    },
+// Get all buttons
+const buttons = document.querySelectorAll(".btn");
 
-    ibuprofen: {
-        name: "Ibuprofen",
-        uses: "Pain and Inflammation",
-        dose: "After food",
-        sideEffects: "Stomach irritation",
-        storage: "Store below 25°C"
-    },
+// Add click event
+buttons.forEach(button => {
 
-    cetirizine: {
-        name: "Cetirizine",
-        uses: "Allergy",
-        dose: "Once daily",
-        sideEffects: "Sleepiness, Dry mouth",
-        storage: "Room temperature"
-    }
-};
+    button.addEventListener("click", function(){
 
-// ==========================
-// Medicine Search
-// ==========================
+        const title = this.parentElement.querySelector("h2").innerText;
 
-document.getElementById("searchBtn").onclick = function () {
+        switch(title){
 
-    const medicine = document
-        .getElementById("medicineInput")
-        .value
-        .toLowerCase()
-        .trim();
+            case "Medicine Search":
+                alert("Medicine Search module is coming next!");
+                break;
 
-    const result = document.getElementById("result");
+            case "Drug Interaction":
+                alert("Drug Interaction module is coming next!");
+                break;
 
-    if (medicines[medicine]) {
+            case "Medicine Reminder":
+                alert("Medicine Reminder module is coming next!");
+                break;
 
-        const med = medicines[medicine];
+            case "AI Assistant":
+                alert("AI Assistant will use Google Gemini AI.");
+                break;
 
-        result.innerHTML = `
-            <h3>${med.name}</h3>
-            <p><b>Uses:</b> ${med.uses}</p>
-            <p><b>Dose:</b> ${med.dose}</p>
-            <p><b>Side Effects:</b> ${med.sideEffects}</p>
-            <p><b>Storage:</b> ${med.storage}</p>
-        `;
+            case "Prescription Scanner":
+                alert("Prescription Scanner coming soon.");
+                break;
 
-    } else {
+            case "Pill Identifier":
+                alert("Pill Identifier coming soon.");
+                break;
 
-        result.innerHTML =
-        "❌ Medicine not found.<br><br>Try: Paracetamol, Ibuprofen or Cetirizine.";
+            default:
+                alert("Feature under development.");
+        }
 
-    }
+    });
 
-};
-
-// ==========================
-// Drug Interaction Checker
-// ==========================
-
-document.getElementById("interactionBtn").onclick = function () {
-
-    const drug1 = document
-        .getElementById("drug1")
-        .value
-        .toLowerCase()
-        .trim();
-
-    const drug2 = document
-        .getElementById("drug2")
-        .value
-        .toLowerCase()
-        .trim();
-
-    const output = document.getElementById("interactionResult");
-
-    if (
-        (drug1 === "warfarin" && drug2 === "aspirin") ||
-        (drug1 === "aspirin" && drug2 === "warfarin")
-    ) {
-
-        output.innerHTML =
-        "⚠️ WARNING<br><br>Warfarin + Aspirin increases bleeding risk.<br>Consult your doctor.";
-
-    }
-
-    else if (
-        (drug1 === "paracetamol" && drug2 === "ibuprofen") ||
-        (drug1 === "ibuprofen" && drug2 === "paracetamol")
-    ) {
-
-        output.innerHTML =
-        "✅ No major interaction found.";
-
-    }
-
-    else {
-
-        output.innerHTML =
-        "ℹ️ Interaction information is not available.";
-
-    }
-
-};
-
-// ==========================
-// Medicine Reminder
-// ==========================
-
-document.getElementById("saveReminderBtn").onclick = function () {
-
-    const medicine =
-        document.getElementById("reminderMedicine").value;
-
-    const time =
-        document.getElementById("reminderTime").value;
-
-    const output =
-        document.getElementById("reminderResult");
-
-    if (medicine === "" || time === "") {
-
-        output.innerHTML =
-        "❌ Please enter medicine name and time.";
-
-        return;
-    }
-
-    output.innerHTML =
-    `✅ Reminder Saved!<br><br>
-    <b>Medicine:</b> ${medicine}<br>
-    <b>Time:</b> ${time}`;
-
-};
+});
