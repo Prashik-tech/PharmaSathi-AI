@@ -47,3 +47,24 @@ h1{
 .card:hover{
     transform:scale(1.03);
 }
+
+.search-btn{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#0066cc;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.result-box{
+    margin-top:15px;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    text-align:left;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
