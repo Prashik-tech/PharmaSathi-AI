@@ -8,38 +8,63 @@
 <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
 
 <nav class="navbar">
-<div class="logo">💙 PharmaSathi AI</div>
+
+<div class="logo">
+💙 PharmaSathi AI
+</div>
+
+<div class="menu">
+
+<a href="#">🏠 Home</a>
+
+<a href="#">💊 Features</a>
+
+<a href="#">👤 Profile</a>
+
+</div>
+
 </nav>
 
 <div class="container">
 
-<h1 class="logo-title">💙 PharmaSathi AI</h1>
+<h1 class="logo-title">
+💙 PharmaSathi AI
+</h1>
 
 <p class="tagline">
-Intelligent Multilingual Medicine Assistant
+Your Intelligent Medicine Assistant
 </p>
 
-<h2>Medicine Search</h2>
+<!-- Medicine Search -->
+
+<h2>🔍 Medicine Search</h2>
 
 <input
 id="medicineInput"
 class="search-box"
-placeholder="Search Medicine">
+placeholder="Enter Medicine Name">
 
-<button id="searchBtn" class="search-btn">
+<button
+id="searchBtn"
+class="search-btn">
 Search
 </button>
 
-<div id="result" class="result-box">
-Search for a medicine...
+<div
+id="result"
+class="result-box">
+Search result will appear here.
 </div>
 
 <hr>
 
-<h2>Drug Interaction Checker</h2>
+<!-- Drug Interaction -->
+
+<h2>💊 Drug Interaction Checker</h2>
 
 <input
 id="drug1"
@@ -62,14 +87,77 @@ Check Interaction
 <div
 id="interactionResult"
 class="result-box">
-Enter two medicines.
+Interaction result will appear here.
+</div>
+
+<hr>
+
+<!-- Medicine Reminder -->
+
+<h2>⏰ Medicine Reminder</h2>
+
+<input
+id="reminderMedicine"
+class="search-box"
+placeholder="Medicine Name">
+
+<br><br>
+
+<input
+id="reminderTime"
+type="time"
+class="search-box">
+
+<button
+id="saveReminderBtn"
+class="search-btn">
+Save Reminder
+</button>
+
+<div
+id="reminderResult"
+class="result-box">
+No reminders yet.
+</div>
+
+<hr>
+
+<h2>🚀 Upcoming Features</h2>
+
+<div class="cards">
+
+<div class="card">
+🤖
+<h3>AI Assistant</h3>
+</div>
+
+<div class="card">
+📷
+<h3>Prescription Scanner</h3>
+</div>
+
+<div class="card">
+💊
+<h3>Pill Identifier</h3>
+</div>
+
+<div class="card">
+🌐
+<h3>Multi-language</h3>
+</div>
+
 </div>
 
 </div>
 
 <footer class="footer">
+
 <p>© 2026 PharmaSathi AI</p>
+
+<p>Developed by Prashik Meshram</p>
+
 <p>Version 1.0</p>
+
 </footer>
 
 <script src="js/script.js"></script>
