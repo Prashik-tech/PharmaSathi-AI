@@ -1,163 +1,134 @@
-/* ===========================
-   PharmaSathi AI V2.0
-=========================== */
+/* ==========================
+   PharmaSathi AI Sprint 2
+========================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#0f172a,#1e3a8a,#6d28d9);
-    color:white;
-    min-height:100vh;
+    background:#eef6ff;
+    color:#333;
 }
 
-/* Navbar */
-
 .navbar{
+    background:#0066cc;
+    color:white;
+    padding:15px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px;
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(15px);
+    flex-wrap:wrap;
 }
 
 .logo{
-    font-size:26px;
+    font-size:24px;
     font-weight:bold;
 }
 
 .menu{
     display:flex;
-    gap:20px;
+    gap:15px;
 }
 
 .menu a{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
 }
-
-.menu a:hover{
-    color:#7dd3fc;
-}
-
-/* Hero */
 
 .hero{
     text-align:center;
-    padding:50px 20px;
+    padding:40px 20px;
 }
 
 .hero h1{
-    font-size:40px;
-    margin-bottom:15px;
+    color:#0066cc;
+    font-size:32px;
+    margin-bottom:10px;
 }
 
 .hero p{
-    max-width:700px;
-    margin:auto;
-    color:#dbeafe;
-    line-height:1.6;
-}
-
-/* Container */
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* Cards */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-    margin:40px 0;
-}
-
-.card{
-    background:rgba(255,255,255,0.12);
-    backdrop-filter:blur(18px);
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    transition:.3s;
-    border:1px solid rgba(255,255,255,.2);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-}
-
-.card i{
-    font-size:50px;
-    margin-bottom:15px;
-    color:#7dd3fc;
-}
-
-.card h2{
-    margin-bottom:12px;
-}
-
-.card p{
-    color:#dbeafe;
+    color:#666;
     margin-bottom:20px;
-    line-height:1.5;
 }
 
-/* Buttons */
+.search-box{
+    width:90%;
+    max-width:400px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
 
 .btn{
-    background:#2563eb;
+    margin-top:15px;
+    padding:12px 20px;
+    background:#0066cc;
     color:white;
     border:none;
-    padding:12px 24px;
     border-radius:10px;
     cursor:pointer;
     font-size:16px;
-    transition:.3s;
 }
 
 .btn:hover{
-    background:#1d4ed8;
+    background:#004c99;
 }
 
-/* Footer */
+.result-box{
+    width:90%;
+    max-width:500px;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card i{
+    font-size:40px;
+    color:#0066cc;
+    margin-bottom:15px;
+}
+
+.card h2{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    margin-bottom:15px;
+}
 
 .footer{
+    background:#0066cc;
+    color:white;
     text-align:center;
-    padding:30px;
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(15px);
-}
-
-.footer p{
-    margin:5px;
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.navbar{
-    flex-direction:column;
-}
-
-.menu{
-    margin-top:15px;
-}
-
-.hero h1{
-    font-size:30px;
-}
-
+    padding:20px;
+    margin-top:30px;
 }
