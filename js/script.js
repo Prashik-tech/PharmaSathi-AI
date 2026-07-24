@@ -1,98 +1,125 @@
 // ===============================
-// PharmaSathi AI Sprint 2
+// PharmaSathi AI - Sprint 3
 // ===============================
 
 // Medicine Database
 const medicines = {
 
-paracetamol:{
-name:"Paracetamol",
-uses:"Fever and Pain Relief",
-dose:"500mg after food",
-sideEffects:"Nausea, Skin rash"
-},
+  paracetamol: {
+    name: "Paracetamol",
+    category: "Analgesic & Antipyretic",
+    uses: "Fever, Headache, Body Pain",
+    dose: "500 mg after food (as advised by doctor)",
+    sideEffects: "Nausea, Skin rash",
+    warning: "Do not exceed the recommended dose. Avoid in severe liver disease."
+  },
 
-ibuprofen:{
-name:"Ibuprofen",
-uses:"Pain and Inflammation",
-dose:"400mg after food",
-sideEffects:"Stomach irritation"
-},
+  ibuprofen: {
+    name: "Ibuprofen",
+    category: "NSAID",
+    uses: "Pain, Inflammation, Fever",
+    dose: "400 mg after food",
+    sideEffects: "Stomach irritation, Heartburn",
+    warning: "Avoid if you have stomach ulcers unless advised by a doctor."
+  },
 
-cetirizine:{
-name:"Cetirizine",
-uses:"Allergy",
-dose:"10mg once daily",
-sideEffects:"Sleepiness"
-}
+  cetirizine: {
+    name: "Cetirizine",
+    category: "Antihistamine",
+    uses: "Allergy, Sneezing, Itching",
+    dose: "10 mg once daily",
+    sideEffects: "Sleepiness, Dry mouth",
+    warning: "May cause drowsiness. Avoid driving after taking it."
+  },
+
+  amoxicillin: {
+    name: "Amoxicillin",
+    category: "Antibiotic",
+    uses: "Bacterial infections",
+    dose: "As prescribed by doctor",
+    sideEffects: "Diarrhea, Nausea",
+    warning: "Complete the full course. Do not stop early."
+  },
+
+  omeprazole: {
+    name: "Omeprazole",
+    category: "Proton Pump Inhibitor",
+    uses: "Acidity, GERD, Stomach ulcer",
+    dose: "20 mg before breakfast",
+    sideEffects: "Headache, Constipation",
+    warning: "Take before meals for best effect."
+  }
 
 };
 
 // Search Button
+const searchBtn = document.getElementById("searchBtn");
 
-const searchBtn=document.getElementById("searchBtn");
+if (searchBtn) {
 
-if(searchBtn){
+  searchBtn.addEventListener("click", function () {
 
-searchBtn.addEventListener("click",function(){
+    const input = document
+      .getElementById("medicineInput")
+      .value
+      .toLowerCase()
+      .trim();
 
-const input=document
-.getElementById("medicineInput")
-.value
-.toLowerCase()
-.trim();
+    const result = document.getElementById("result");
 
-const result=document.getElementById("result");
+    if (medicines[input]) {
 
-if(medicines[input]){
+      const med = medicines[input];
 
-const med=medicines[input];
+      result.innerHTML = `
+        <h2>${med.name}</h2>
 
-result.innerHTML=`
-<h2>${med.name}</h2>
+        <p><b>Category:</b> ${med.category}</p>
 
-<p><b>Uses:</b> ${med.uses}</p>
+        <p><b>Uses:</b> ${med.uses}</p>
 
-<p><b>Dose:</b> ${med.dose}</p>
+        <p><b>Dose:</b> ${med.dose}</p>
 
-<p><b>Side Effects:</b> ${med.sideEffects}</p>
+        <p><b>Side Effects:</b> ${med.sideEffects}</p>
 
-`;
+        <p><b>Warning:</b> ${med.warning}</p>
+      `;
 
-}else{
+    } else {
 
-result.innerHTML=`
-<h2>Medicine Not Found</h2>
+      result.innerHTML = `
+        <h2>Medicine Not Found</h2>
 
-<p>Please try:</p>
+        <p>Try searching:</p>
 
-<ul>
-<li>Paracetamol</li>
-<li>Ibuprofen</li>
-<li>Cetirizine</li>
-</ul>
-`;
+        <ul>
+          <li>Paracetamol</li>
+          <li>Ibuprofen</li>
+          <li>Cetirizine</li>
+          <li>Amoxicillin</li>
+          <li>Omeprazole</li>
+        </ul>
+      `;
 
-}
+    }
 
-});
+  });
 
 }
 
 // Card Buttons
+const buttons = document.querySelectorAll(".btn");
 
-const buttons=document.querySelectorAll(".btn");
+buttons.forEach(btn => {
 
-buttons.forEach(btn=>{
+  btn.addEventListener("click", function () {
 
-btn.addEventListener("click",function(){
+    if (btn.innerText === "Open") {
 
-if(btn.innerText==="Open"){
+      alert("This feature will be available soon in PharmaSathi AI 🚀");
 
-alert("Feature coming in next sprint 🚀");
+    }
 
-}
-
-});
+  });
 
 });
