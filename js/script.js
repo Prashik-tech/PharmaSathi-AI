@@ -143,3 +143,72 @@ if (medicineList) {
   });
 
 }
+
+// ===============================
+// Drug Interaction Checker
+// ===============================
+
+const interactionBtn = document.getElementById("checkInteraction");
+
+if (interactionBtn) {
+
+  const interactions = {
+
+    "paracetamol|ibuprofen": {
+      level: "Safe",
+      message: "Generally safe when used as directed."
+    },
+
+    "ibuprofen|warfarin": {
+      level: "High Risk",
+      message: "May increase the risk of bleeding. Consult a doctor."
+    },
+
+    "amoxicillin|paracetamol": {
+      level: "Safe",
+      message: "No major interaction is commonly known."
+    },
+
+    "cetirizine|alcohol": {
+      level: "Warning",
+      message: "May cause excessive drowsiness."
+    }
+
+  };
+
+  interactionBtn.addEventListener("click", function () {
+
+    const drug1 = document.getElementById("drug1").value.toLowerCase().trim();
+    const drug2 = document.getElementById("drug2").value.toLowerCase().trim();
+
+    const key1 = drug1 + "|" + drug2;
+    const key2 = drug2 + "|" + drug1;
+
+    const result = document.getElementById("interactionResult");
+
+    if (interactions[key1]) {
+
+      result.innerHTML = `
+      <h2>${interactions[key1].level}</h2>
+      <p>${interactions[key1].message}</p>
+      `;
+
+    } else if (interactions[key2]) {
+
+      result.innerHTML = `
+      <h2>${interactions[key2].level}</h2>
+      <p>${interactions[key2].message}</p>
+      `;
+
+    } else {
+
+      result.innerHTML = `
+      <h2>No Data Available</h2>
+      <p>This interaction is not available in the current database.</p>
+      `;
+
+    }
+
+  });
+
+}
