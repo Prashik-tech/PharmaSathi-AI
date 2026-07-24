@@ -212,3 +212,70 @@ if (interactionBtn) {
   });
 
 }
+
+// ===============================
+// PharmaSathi AI Chat Assistant
+// ===============================
+
+const askAI = document.getElementById("askAI");
+
+if (askAI) {
+
+  askAI.addEventListener("click", function () {
+
+    const question = document
+      .getElementById("question")
+      .value
+      .toLowerCase()
+      .trim();
+
+    const answer = document.getElementById("answer");
+
+    if (question.includes("paracetamol")) {
+
+      answer.innerHTML = `
+      <h2>💊 Paracetamol</h2>
+      <p>Paracetamol is used to reduce fever and relieve mild to moderate pain.</p>
+      `;
+
+    }
+
+    else if (question.includes("ibuprofen")) {
+
+      answer.innerHTML = `
+      <h2>💊 Ibuprofen</h2>
+      <p>Ibuprofen is used for pain, inflammation and fever.</p>
+      `;
+
+    }
+
+    else if (question.includes("cetirizine")) {
+
+      answer.innerHTML = `
+      <h2>💊 Cetirizine</h2>
+      <p>Cetirizine is an antihistamine used to treat allergies.</p>
+      `;
+
+    }
+
+    else if (question.includes("fever")) {
+
+      answer.innerHTML = `
+      <h2>🤒 Fever</h2>
+      <p>Drink enough fluids, rest, and consult a doctor if the fever is high, persistent, or accompanied by severe symptoms.</p>
+      `;
+
+    }
+
+    else {
+
+      answer.innerHTML = `
+      <h2>🤖 PharmaSathi AI</h2>
+      <p>Sorry! I don't have information about that yet.</p>
+      `;
+
+    }
+
+  });
+
+}
