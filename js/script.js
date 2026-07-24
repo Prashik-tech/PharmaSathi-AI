@@ -123,3 +123,23 @@ buttons.forEach(btn => {
   });
 
 });
+
+// ===============================
+// Auto Suggest Medicine Names
+// ===============================
+
+const medicineList = document.getElementById("medicineList");
+
+if (medicineList) {
+
+  Object.values(medicines).forEach((medicine) => {
+
+    const option = document.createElement("option");
+
+    option.value = medicine.name;
+
+    medicineList.appendChild(option);
+
+  });
+
+}
