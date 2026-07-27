@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Paracetamol",
+    "brand": "Crocin",
+    "generic": "Acetaminophen",
+    "strength": "500 mg",
+    "uses": "Fever, mild to moderate pain",
+    "dose": "1 tablet every 6–8 hours if needed (maximum 4 g/day for adults unless advised otherwise)",
+    "sideEffects": [
+      "Nausea",
+      "Rash",
+      "Liver damage (overdose)"
+    ],
+    "warnings": [
+      "Do not exceed the recommended dose.",
+      "Consult a doctor if fever lasts more than 3 days."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Cetirizine",
+    "brand": "Cetzine",
+    "generic": "Cetirizine",
+    "strength": "10 mg",
+    "uses": "Allergy, sneezing, itching",
+    "dose": "1 tablet once daily",
+    "sideEffects": [
+      "Drowsiness",
+      "Dry mouth"
+    ],
+    "warnings": [
+      "Avoid driving if you feel sleepy."
+    ]
+  }
+]
