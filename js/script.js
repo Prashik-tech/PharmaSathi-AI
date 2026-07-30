@@ -68,9 +68,14 @@ if (searchBtn) {
 
     const result = document.getElementById("result");
 
-    if (medicines[input]) {
+    let med = medicines[input];
 
-      const med = medicines[input];
+if (!med && input === "pcm") med = medicines.paracetamol;
+if (!med && input === "crocin") med = medicines.paracetamol;
+if (!med && input === "calpol") med = medicines.paracetamol;
+if (!med && input === "dolo") med = medicines.paracetamol;
+
+if (med) {
 
       result.innerHTML = `
         <h2>${med.name}</h2>
