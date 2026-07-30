@@ -55,6 +55,15 @@ const medicines = {
 
 // Search Button
 const searchBtn = document.getElementById("searchBtn");
+const medicineInput = document.getElementById("medicineInput");
+
+if (medicineInput) {
+  medicineInput.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      searchBtn.click();
+    }
+  });
+}
 
 if (searchBtn) {
 
