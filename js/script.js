@@ -7,6 +7,7 @@ const medicines = {
 
   paracetamol: {
     name: "Paracetamol",
+    aliases: ["pcm", "crocin", "calpol", "dolo 650", "dolo", "paracetamol"],
     category: "Analgesic & Antipyretic",
     uses: "Fever, Headache, Body Pain",
     dose: "500 mg after food (as advised by doctor)",
